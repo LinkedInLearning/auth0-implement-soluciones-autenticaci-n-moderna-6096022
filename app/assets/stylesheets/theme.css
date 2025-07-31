@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap");
+
+/* Theme */
+
+:root {
+  --coffee-dark: #4A3428;
+  --coffee-medium: #795548;
+  --coffee-light: #9C7A6B;
+  --cream: #FFF5E6;
+  --beige: #F5E6D3;
+  --soft-pink: #FFE4E1;
+  --accent-gold: #D4B08C;
+  --text-dark: #2C1810;
+  --text-light: #FFF5E6;
+  --background: #FFF9F5;
+
+  --coffee-cream-gradient: linear-gradient(
+    153.07deg,
+    var(--coffee-dark) -2.47%,
+    var(--cream) 102.78%
+  );
+
+  --beige-pink-gradient: linear-gradient(
+    153.07deg,
+    var(--beige) -2.47%,
+    var(--soft-pink) 102.78%
+  );
+
+  --coffee-gold-gradient: linear-gradient(
+    153.07deg,
+    var(--coffee-medium) -2.47%,
+    var(--accent-gold) 102.78%
+  );
+
+  --font-primary: "Lexend", sans-serif;
+  --font-secondary: "Lexend", sans-serif;
+  --font-mono: "Fira Code", monospace;
+}

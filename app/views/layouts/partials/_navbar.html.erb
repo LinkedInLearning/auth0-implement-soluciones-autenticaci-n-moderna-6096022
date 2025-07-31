@@ -1,0 +1,12 @@
+<div class="nav-bar__container">
+  <nav class="nav-bar">
+    <div class="nav-bar__brand">
+      <%= link_to root_path do %>
+        <span class="nav-bar__logo" style="font-size: 2rem;" aria-label="coffee">
+          ☕
+        </span>
+      <% end %>
+    </div>
+     <%= render partial: "layouts/partials/navbar_tabs", locals: { nav_bar_class: "nav-bar__tabs", nav_bar_tab_class: "nav-bar__tab" } %> 
+  </nav>
+</div>
