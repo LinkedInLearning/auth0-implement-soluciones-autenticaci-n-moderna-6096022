@@ -1,14 +1,10 @@
 <div class="mobile-nav-bar__container">
   <nav id="mobile-nav-bar" class="mobile-nav-bar">
     <div class="mobile-nav-bar__brand">
-      <%= link_to root_path do %>
-        <img
-          class="mobile-nav-bar__logo"
-          src="https://cdn.auth0.com/blog/hub/code-samples/hello-world/auth0-logo.svg"
-          alt="Auth0 shield logo"
-          width="82"
-          height="24"
-        />
+     <%= link_to root_path do %>
+        <span class="nav-bar__logo" style="font-size: 2rem;" aria-label="coffee">
+          ☕
+        </span>
       <% end %>
     </div>
     <span class="mobile-nav-bar__toggle material-icons" id="mobile-menu-toggle-button">
