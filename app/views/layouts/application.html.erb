@@ -20,6 +20,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="page-layout">
+        <%= render partial: "layouts/partials/navbar" %>
+        <%= render partial: "layouts/partials/mobile/navbar" %>
+
+        <%= yield %>
+
+    </div>
   </body>
 </html>

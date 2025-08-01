@@ -1,14 +1,12 @@
 .nav-bar__container {
-  position: fixed;
+  position: relative;
   display: flex;
   justify-content: center;
   flex-shrink: 0;
   width: 100%;
-
-  box-shadow: 0 2px 4px rgba(74, 52, 40, 0.1);
-
-  z-index: 300;
-  background-color: var(--cream);
+  background: var(--beige-pink-gradient);
+  box-shadow: 0 2px 4px rgba(74, 52, 40, 0.08);
+  z-index: 100;
   border-bottom: 2px solid var(--coffee-light);
 }
 
@@ -60,12 +58,14 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-
   margin-right: 24px;
-
   font-weight: 500;
   font-size: 16px;
   line-height: 16px;
+  color: var(--coffee-dark);
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-bar__tab:last-child {
@@ -73,18 +73,14 @@
 }
 
 .nav-bar__tab--active {
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-color: var(--indigo);
-
-  /* responsive */
-
-  text-decoration-thickness: 4px;
-  text-underline-offset: 8px;
+  background-color: var(--coffee-light);
+  color: var(--cream);
 }
 
 .nav-bar__tab:hover {
-  color: var(--white);
+  background-color: var(--coffee-light);
+  color: var(--cream);
+  transform: translateY(-1px);
 }
 
 .nav-bar__icon {
@@ -133,8 +129,8 @@
   }
 
   .nav-bar__tab--active {
-    text-decoration-line: none;
-    color: var(--pink);
+    background-color: var(--coffee-light);
+    color: var(--cream);
   }
 
   .nav-bar__label {
