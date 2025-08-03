@@ -10,4 +10,7 @@ Rails.application.routes.draw do
       get 'logout' => 'auth0#logout'
     end
   end
+
+  # Profile route
+  get 'profile' => 'profile#show', as: :profile
 end

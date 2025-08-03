@@ -6,10 +6,10 @@ class Auth0Controller < ApplicationController
     auth_info = request.env['omniauth.auth']
     session[:credentials] = {}
     session[:credentials][:id_token] = auth_info['credentials']['id_token']
-
-    redirect_to root_path
+    logger.info "User authenticated: #{session[:credentials][:id_token]}"
+    redirect_to profile_path
   end
-
+  
   def failure
     @error_msg = request.params['message']
   end

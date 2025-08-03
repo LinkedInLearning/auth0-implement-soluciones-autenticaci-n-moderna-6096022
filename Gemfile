@@ -16,11 +16,19 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem 'omniauth-auth0', '~> 3.1.1'
 
 # Prevents forged authentication requests
-gem 'omniauth-rails_csrf_protection', '~> 1.0' 
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
+
+# Gem Repost implements Redirect using POST method. https://vergilet.github.io/repost/ 
+gem 'repost'
+
+# A ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard. https://github.com/jwt/ruby-jwt
+gem 'jwt'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   gem "dotenv-rails", "~> 3.1.8"
+
+  gem "pry"
 end

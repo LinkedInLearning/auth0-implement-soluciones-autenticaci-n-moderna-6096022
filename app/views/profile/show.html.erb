@@ -1,0 +1,19 @@
+<div class="content-layout">
+  <h1 id="page-title" class="content__title">¡Bienvenida a tu perfil!</h1>
+  <div class="content__body">
+    <div class="profile-grid">
+      <div class="profile__header">
+        <%= "#{@user[:emoji]}" %>
+        <div class="profile__headline">
+          <h2 class="profile__title"><%= @user[:name] %></h2>
+          <span class="profile__description"><%= @user[:email] %></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile__details">
+      <h4 class="code-block__title">Tu información de perfil desde Auth0 👀</h4>
+      <pre class="code-block"><code><%= JSON.pretty_generate(@user[:id_token]) %></code></pre>
+    </div>
+  </div>
+</div>
