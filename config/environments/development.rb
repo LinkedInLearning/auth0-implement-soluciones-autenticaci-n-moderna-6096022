@@ -25,8 +25,11 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
   end
 
-  # Change to :null_store to avoid any caching.
-  config.cache_store = :memory_store
+  # Use file store for more persistent caching in development
+  config.cache_store = :file_store, Rails.root.join("tmp/cache/")
+  
+  # Configure session store separately from cache store
+  config.session_store :cache_store, key: '_auth0_session'
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

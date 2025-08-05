@@ -1,0 +1,32 @@
+<div class="content-layout">
+  <h1 class="content__title">Recetas</h1>
+  <h3 class="content__subtitle">Solo puedes ver estas recetas si tienes un access token.</h3>
+  <div class="recipes-grid">
+    <% if @recipes.present? %>
+      <% @recipes.each do |recipe| %>
+        <% recipe = recipe.with_indifferent_access %>
+        <div class="recipe-card">
+          <% if recipe[:image].present? %>
+            <img src="<%= recipe[:image] %>" alt="<%= recipe[:title] %>" class="recipe-card__image">
+          <% end %>
+          <div class="recipe-card__content">
+            <h2 class="recipe-card__title"><%= recipe[:title] %></h2>
+            <p class="recipe-card__description"><%= recipe[:description] %></p>
+            <div class="recipe-card__ingredients">
+              <% if recipe[:ingredients].present? && recipe[:ingredients].is_a?(Array) %>
+                <h3>Ingredients:</h3>
+                <ul>
+                  <% recipe[:ingredients].each do |ingredient| %>
+                    <li><%= ingredient %></li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No recipes found.</p>
+    <% end %>
+  </div>
+</div>

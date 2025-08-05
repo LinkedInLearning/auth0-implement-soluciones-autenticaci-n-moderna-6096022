@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     session[:credentials].with_indifferent_access[:id_token] if session[:credentials]
   end
 
+  def current_access_token
+    session[:credentials].with_indifferent_access[:access_token] if session[:credentials]
+  end
+
   def current_user
     decoded_id_token if session[:credentials]
   end

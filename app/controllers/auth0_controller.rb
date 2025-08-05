@@ -6,7 +6,8 @@ class Auth0Controller < ApplicationController
     auth_info = request.env['omniauth.auth']
     session[:credentials] = {}
     session[:credentials][:id_token] = auth_info['credentials']['id_token']
-    logger.info "User authenticated: #{session[:credentials][:id_token]}"
+    session[:credentials][:access_token] = auth_info['credentials']['token']
+    
     redirect_to profile_path
   end
   

@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   # Profile route
   get 'profile' => 'profile#show', as: :profile
+  get 'recipes' => 'recipes#index', as: :recipes
 end
