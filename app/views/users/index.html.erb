@@ -1,0 +1,22 @@
+<div class="content-layout">
+  <h1 class="content__title">Usuarios</h1>
+
+  <ul class="user-list">
+    <% @users.each do |user| %>
+      <li class="user-list-item">
+        <div class="user-card-header">
+          <div class="user-avatar">
+            <%= user[:name].split.map { |n| n[0] }.join.upcase %>
+          </div>
+        </div>
+        <div class="user-info">
+          <strong><%= user[:name] %></strong>
+          <span><%= user[:email] %></span>
+        </div>
+        <div class="user-card-footer">
+          <span class="user-role">Usuario</span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

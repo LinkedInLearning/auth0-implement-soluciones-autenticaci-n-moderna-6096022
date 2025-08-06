@@ -7,7 +7,7 @@ class Auth0Controller < ApplicationController
     session[:credentials] = {}
     session[:credentials][:id_token] = auth_info['credentials']['id_token']
     session[:credentials][:access_token] = auth_info['credentials']['token']
-    
+
     redirect_to profile_path
   end
   

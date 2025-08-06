@@ -13,5 +13,16 @@ Rails.application.routes.draw do
 
   # Profile route
   get 'profile' => 'profile#show', as: :profile
+
+  # Recipes route
   get 'recipes' => 'recipes#index', as: :recipes
+
+  # Admin scope
+  scope :admin do
+    resources :users, only: [:index, :show]
+  end
+
+  match '/404', to: 'errors#not_found', via: :all
+  match '/500', to: 'errors#server_error', via: :all
+  match '/403', to: 'errors#forbidden', via: :all
 end
