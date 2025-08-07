@@ -25,13 +25,17 @@ module Secured
 
     render 'errors/forbidden', status: :forbidden and return if validation_response.error
       
-    unless has_permissions?(['read:users'])
+    unless admin?
       render 'errors/forbidden', status: :forbidden
     end
   end
 
   def has_permissions?(permissions)
     @decoded_token.validate_permissions(permissions)
+  end
+
+  def admin?
+    @decoded_token.validate_roles(['admin'])
   end
 
   private

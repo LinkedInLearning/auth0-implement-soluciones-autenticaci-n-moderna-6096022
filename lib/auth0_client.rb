@@ -13,6 +13,11 @@ class Auth0Client
       token_permissions = Set.new token[0]['permissions']
       required_permissions <= token_permissions
     end
+    def validate_roles(roles)
+      required_roles = Set.new roles
+      token_roles = Set.new token[0]["#{AUTH0_CONFIG['auth0_role_namespace']}/roles"]
+      required_roles <= token_roles
+    end
   end
 
   # Helper Functions
