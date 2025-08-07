@@ -1,0 +1,53 @@
+.barista-form {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.barista-form__title {
+  margin-bottom: 1.5rem;
+}
+
+.barista-form__title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.barista-form .form-select {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  cursor: pointer;
+}
+
+.barista-form .form-select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.barista-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.barista-level {
+  color: #666;
+  font-size: 1rem;
+  font-style: italic;
+}

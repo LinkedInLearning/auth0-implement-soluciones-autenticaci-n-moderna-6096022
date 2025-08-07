@@ -1,0 +1,32 @@
+<%# app/views/users/show.html.erb %>
+<div class="content-layout">
+  <h1 class="content__title">Perfil de Barista de <%= @user[:name] %></h1>
+  
+  <div class="barista-form">
+    <%= form_tag update_barista_level_user_path(@user[:user_id]), method: :put do %>
+      <div class="barista-form__title">
+        <h3>Nivel de Experiencia</h3>
+        <% if @user_metadata&.dig('barista_level').present? %>
+          <span class="barista-level">
+            Nivel actual: <%= t(@user_metadata['barista_level'], scope: 'barista_levels', default: @user_metadata['barista_level'].humanize) %>
+          </span>
+        <% end %>
+      </div>
+      
+      <div class="form-group">
+        <%= select_tag :barista_level, 
+            options_for_select([
+              ['Principiante', 'beginner'],
+              ['Aficionado', 'amateur'],
+              ['Entusiasta', 'enthusiast'],
+              ['Profesional', 'professional']
+            ], @user_metadata&.dig('barista_level')),
+            class: 'form-select' %>
+      </div>
+      
+      <div class="form-group" style="margin-top: 1rem; display: flex; align-items: center; gap: 1rem;">
+        <%= submit_tag "Actualizar Nivel", class: 'button button--primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

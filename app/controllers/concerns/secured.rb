@@ -21,7 +21,7 @@ module Secured
   }.freeze
 
   def authorize(token)
-    validation_response = Auth0Client.validate_token(token)
+    validation_response = Auth0TokenValidator.validate_token(token)
 
     @decoded_token = validation_response.decoded_token
 

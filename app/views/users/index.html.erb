@@ -12,10 +12,17 @@
         <div class="user-info">
           <strong><%= user[:name] %></strong>
           <span><%= user[:email] %></span>
+          <% if user[:user_metadata]&.dig(:barista_level).present? %>
+            <span class="barista-level">
+              Nivel actual: <%= t(user[:user_metadata][:barista_level], scope: 'barista_levels', default: user[:user_metadata][:barista_level].humanize) %>
+            </span>
+          <% end %>
         </div>
-        <div class="user-card-footer">
-          <span class="user-role">Usuario</span>
-        </div>
+        <%= link_to user_path(user[:user_id]) do %>
+          <div class="user-card-footer">
+            <span class="user-role">Ver Detalle</span>
+          </div>
+        <% end %>
       </li>
     <% end %>
   </ul>

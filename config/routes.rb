@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
   # Admin scope
   scope :admin do
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show] do 
+      member do
+        put :update_barista_level
+      end
+    end
   end
 
   match '/404', to: 'errors#not_found', via: :all
