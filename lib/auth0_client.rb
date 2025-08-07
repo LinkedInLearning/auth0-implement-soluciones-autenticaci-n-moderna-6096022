@@ -3,6 +3,8 @@
 require 'jwt'
 require 'net/http'
 
+# Esta clase valida y desencripta los JWTs, tambien valida los permisos y roles 
+# añadidos como claims al token 
 class Auth0Client
   # Auth0 Client Objects
   Error = Struct.new(:message, :status)

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Este modulo actua como el middleware de autorizacion donde gestionamos 
+# todos los accesos y hace use de la clase Auth0Client para comunicarse con Auth0
 module Secured
   extend ActiveSupport::Concern
 
