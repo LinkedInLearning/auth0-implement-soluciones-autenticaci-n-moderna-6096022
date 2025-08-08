@@ -42,6 +42,12 @@ Rails.application.configure do
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
+  
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  config.asset_host = ENV['RAILS_ASSET_HOST'] if ENV['RAILS_ASSET_HOST'].present?
+
+  # Force SSL
+  config.force_ssl = true
 
   # Replace the default in-process memory cache store with a durable alternative.
   # config.cache_store = :mem_cache_store

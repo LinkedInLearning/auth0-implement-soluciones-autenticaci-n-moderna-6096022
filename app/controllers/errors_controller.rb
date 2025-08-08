@@ -11,4 +11,5 @@ class ErrorsController < ApplicationController
 
   def forbidden
     render status: :forbidden
+  end
 end

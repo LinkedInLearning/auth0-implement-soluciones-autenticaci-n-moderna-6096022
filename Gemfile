@@ -5,7 +5,8 @@ gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 2.1"
+gem "pg", "~> 1.5"
+gem "sqlite3", ">= 2.1", group: [:development, :test]
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -35,3 +36,8 @@ group :development, :test do
 
   gem "pry"
 end
+
+gem "dockerfile-rails", ">= 1.7", group: :development
+
+# Use Active Record as the session store
+gem "activerecord-session_store"

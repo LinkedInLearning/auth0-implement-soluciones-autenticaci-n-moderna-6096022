@@ -1,0 +1,86 @@
+# fly.toml app configuration file generated for auth0-linkedin on 2025-08-07T19:37:58+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'auth0-linkedin'
+primary_region = 'cdg'
+kill_signal = 'SIGINT'
+kill_timeout = '5s'
+console_command = '/rails/bin/rails console'
+
+[experimental]
+  auto_rollback = true
+
+[build]
+  [build.args]
+    SECRET_KEY_BASE = "dummy_key_for_asset_precompile"
+    AUTH0_CLIENT_ID = "dummy_id_for_asset_precompile"
+    AUTH0_CLIENT_SECRET = "dummy_secret_for_asset_precompile"
+    AUTH0_DOMAIN = "dummy.auth0.com"
+    AUTH0_CALLBACK_PATH = "/auth/auth0/callback"
+
+[deploy]
+  release_command = "bin/rails db:migrate"
+
+[env]
+  PORT = '3000'
+  RAILS_ENV = 'production'
+  SERVER_COMMAND = 'bin/rails server'
+  DATABASE_URL = "postgres://auth0_linkedin:${DATABASE_PASSWORD}@auth0-linkedin-db.internal:5432/auth0_linkedin"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  max_machines_running = 1
+  processes = ['app']
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 3000
+  processes = ['app']
+
+  [[services.ports]]
+    port = 80
+    handlers = ['http']
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ['tls', 'http']
+
+  [services.concurrency]
+    type = 'connections'
+    hard_limit = 5
+    soft_limit = 3
+
+  [[services.http_checks]]
+    interval = '10s'
+    grace_period = '30s'
+    method = "get"
+    path = "/"
+    protocol = "http"
+    timeout = '5s'
+
+  [[services.http_checks]]
+    interval = '10s'
+    grace_period = '5s'
+    method = 'get'
+    path = '/health'
+    protocol = 'http'
+    timeout = '2s'
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
+  min_scale_count = 0
+  max_scale_count = 1
+
+[mounts]
+  source="auth0_linkedin_db"
+  destination="/data"
+  size="1gb"
