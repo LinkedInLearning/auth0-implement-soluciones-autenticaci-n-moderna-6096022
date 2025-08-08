@@ -1,6 +1,6 @@
-# Nombre final del curso
+# Auth0: Implementación de soluciones de autenticación moderna
 
-Este es el repositorio del curso de LinkedIn Learning `[nombre del curso]`. El curso completo está disponible en [LinkedIn Learning][lil-course-url].
+Este es el repositorio del curso de LinkedIn Learning `Auth0: Implementación de soluciones de autenticación moderna`. El curso completo está disponible en [LinkedIn Learning][lil-course-url].
 
 ![Nombre completo del curso][lil-thumbnail-url] 
 
@@ -17,16 +17,36 @@ Las ramas están estructuradas para corresponder a los vídeos del curso. La con
 ## Instalación
 
 1. Para utilizar estos archivos de ejercicios, debes tener descargado lo siguiente:
-   - [software]
+   - Ruby v3+
+   - Ruby on Rails v8
 
 2. Clona este repositorio en tu máquina local usando la Terminal (macOS) o CMD (Windows), o una herramienta GUI como SourceTree.
-3. [Instrucciones específicas del curso].
+3. Instala las dependencias del proyecto ejecutando `bundle install` en la raíz del repositorio.
+
+4. Configura Auth0:
+   - Crea una cuenta en [Auth0](https://auth0.com/).
+   - Genera una nueva aplicación y copia el `Domain`, `Client ID` y `Client Secret`.
+   - Crea un archivo `.env` en la raíz del proyecto y agrega las siguientes variables: 
+     ```
+     AUTH0_DOMAIN=tu-dominio.auth0.com
+     AUTH0_CLIENT_ID=tu-client-id
+     AUTH0_CLIENT_SECRET=tu-client-secret
+     ```
+   - Guarda los cambios.
+
+5. Inicia el servidor local con:
+   ```
+   rails server
+   ```
+   El proyecto estará disponible en `http://localhost:3000`.
+
+6. Accede a la aplicación y prueba el flujo de autenticación con Auth0.
 
 ### Docente
 
-**Nombre del docente**
+**Carla Urrea Stabile**
 
-Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/carla-urrea-stabile).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]: https://www.linkedin.com
