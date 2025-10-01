@@ -4,7 +4,7 @@ Este es el repositorio del curso de LinkedIn Learning `Auth0: Implementación de
 
 ![Nombre completo del curso][lil-thumbnail-url] 
 
-DESCRIPCIÓN DEL CURSO
+Aprende a implementar autenticación moderna en tus aplicaciones con Auth0, desde la configuración inicial hasta el despliegue en producción. Descubre cómo proteger rutas y APIs usando JWTs, gestionar login y logout de forma segura, e incorporar autenticación sin contraseñas o con passkeys. Integra roles y permisos para controlar el acceso con precisión, añade un segundo factor de seguridad y personaliza la experiencia de login. Además, conecta proveedores externos como Google y utiliza metadatos para mejorar la interacción del usuario, asegurando una solución robusta y escalable.
 
 ## Instrucciones
 
@@ -12,7 +12,7 @@ Este repositorio tiene ramas (branches) para cada uno de los vídeos del curso. 
 
 ## Ramas
 
-Las ramas están estructuradas para corresponder a los vídeos del curso. La convención de nomenclatura es Capítulo#_Vídeo#. Por ejemplo, la rama denominada `02_03` corresponde al segundo capítulo y al tercer vídeo de ese capítulo. Algunas ramas tendrán un estado inicial y otro final. Están marcadas con las letras i («inicio») y f («fin»). La branch i tiene el mismo código que al principio del vídeo. La branch f tiene el mismo código que al final del vídeo. La rama master tiene el estado final del código que aparece en el curso.
+Las ramas están estructuradas para corresponder a los vídeos del curso. La convención de nomenclatura es Capítulo#_Vídeo#. Por ejemplo, la rama denominada `02_03` corresponde al segundo capítulo y al tercer vídeo de ese capítulo. 
 
 ## Instalación
 
@@ -49,7 +49,7 @@ Las ramas están estructuradas para corresponder a los vídeos del curso. La con
 Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/carla-urrea-stabile).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
-[lil-course-url]: https://www.linkedin.com
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
+[lil-course-url]: https://www.linkedin.com/learning/auth0-implementacion-de-soluciones-de-autenticacion-moderna
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQFY2BdEOj6Shw/learning-public-crop_675_1200/B4EZl__63RHcAY-/0/1758789087432?e=2147483647&v=beta&t=a5yjmk6dnvVDAcGqaCfE3xlrRGcwvtFKB7BIvNwnpOY
 
 [1]: # (End of ES-Instruction ###############################################################################################)
